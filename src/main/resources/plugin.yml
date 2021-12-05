@@ -1,3 +1,0 @@
-name: TestPlugin
-version: '${version}'
-main: me.elier.nachospigot.testplugin.TestPlugin
