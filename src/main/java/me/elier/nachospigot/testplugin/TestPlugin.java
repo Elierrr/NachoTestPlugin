@@ -1,7 +1,6 @@
 package me.elier.nachospigot.testplugin;
 
-import me.elier.nachospigot.testplugin.listener.BlockPlaceListener;
-import me.elier.nachospigot.testplugin.listener.ExplosionListener;
+import me.elier.nachospigot.testplugin.listener.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,6 +24,7 @@ public final class TestPlugin extends JavaPlugin {
 
         this.getServer().getPluginManager().registerEvents(new ExplosionListener(), this);
         this.getServer().getPluginManager().registerEvents(new BlockPlaceListener(), this);
+        this.getServer().getPluginManager().registerEvents(new InteractListener(), this);
         SpawnPearlCommand spawnPearlCommand = new SpawnPearlCommand();
         this.getServer().getCommandMap().register(spawnPearlCommand.getName(), "testplugin", spawnPearlCommand);
     }

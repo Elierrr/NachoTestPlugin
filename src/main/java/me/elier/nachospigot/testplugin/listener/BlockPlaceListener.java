@@ -10,7 +10,9 @@ import java.util.logging.Level;
 public class BlockPlaceListener implements Listener {
     @EventHandler
     public void cancelEvent(BlockPlaceEvent e) {
-        if(TestPlugin.getInstance().config.getBoolean("cancel-block-place-events")) e.setCancelled(true);
-        TestPlugin.getInstance().getLogger().log(Level.INFO, "Cancelled block place event.");
+        if(TestPlugin.getInstance().config.getBoolean("cancel-block-place-events")) {
+            e.setCancelled(true);
+            TestPlugin.getInstance().getLogger().log(Level.INFO, "Cancelled block place event.");
+        }
     }
 }
