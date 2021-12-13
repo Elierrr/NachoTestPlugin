@@ -1,18 +1,18 @@
 package me.elier.nachospigot.testplugin;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.Material;
+import org.bukkit.Statistic;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
-public class SpawnPearlCommand extends Command {
-    public SpawnPearlCommand() {
-        super("pearl");
-        this.description = "Spawns an ender pearl above the sender.";
-        this.usageMessage = "/pearl";
+public class PrintStatisticCommand extends Command {
+
+    public PrintStatisticCommand() {
+        super("print-statistic");
+        this.description = "Prints the sender's statistic on mining diamond ore";
+        this.usageMessage = "/print-statistic";
     }
 
     @Override
@@ -22,9 +22,7 @@ public class SpawnPearlCommand extends Command {
             return true;
         }
         Player player = (Player) sender;
-        World world = player.getWorld();
-        Location location = player.getLocation();
-        world.spawnEntity(new Location(world, location.getX(), location.getY()+10, location.getZ()), EntityType.ENDER_PEARL);
+        sender.sendMessage(String.valueOf(player.getStatistic(Statistic.MINE_BLOCK, Material.DIAMOND_ORE)));
         return false;
     }
 }

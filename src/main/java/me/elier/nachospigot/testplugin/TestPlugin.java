@@ -26,7 +26,9 @@ public final class TestPlugin extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new BlockPlaceListener(), this);
         this.getServer().getPluginManager().registerEvents(new InteractListener(), this);
         SpawnPearlCommand spawnPearlCommand = new SpawnPearlCommand();
+        PrintStatisticCommand printStatisticCommand = new PrintStatisticCommand();
         this.getServer().getCommandMap().register(spawnPearlCommand.getName(), "testplugin", spawnPearlCommand);
+        this.getServer().getCommandMap().register(printStatisticCommand.getName(), "testplugin", printStatisticCommand);
     }
 
     @Override
