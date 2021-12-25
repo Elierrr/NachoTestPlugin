@@ -8,6 +8,6 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 public class ExplosionListener implements Listener {
     @EventHandler
     public void onEntityExplode(EntityExplodeEvent e) {
-        if(TestPlugin.getInstance().config.getBoolean("log-entity-explode-blocklist")) System.out.println(e.blockList());
+        if(TestPlugin.Config.logEntityExplodeBlocklist) System.out.println(e.blockList());
     }
 }

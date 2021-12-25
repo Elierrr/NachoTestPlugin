@@ -4,14 +4,14 @@ plugins {
 }
 
 repositories {
-    //maven("https://jitpack.io")
-    mavenLocal()
+    maven("https://jitpack.io")
+    maven("https://hub.spigotmc.org/nexus/content/repositories/public/")
     mavenCentral()
 }
 
 dependencies {
-    //compileOnly("com.github.CobbleSword.NachoSpigot:api:master-SNAPSHOT") // jitpack currently doesnt work
-    compileOnly("dev.cobblesword.nachospigot:api:1.8.8-R0.2-SNAPSHOT")
+    compileOnly("com.github.CobbleSword.NachoSpigot:api:2cefae426f")
+    //compileOnly("dev.cobblesword.nachospigot:api:1.8.8-R0.2-SNAPSHOT")
 }
 
 bukkit {

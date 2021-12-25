@@ -10,7 +10,7 @@ import java.util.logging.Level;
 public class InteractListener implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
-        if(TestPlugin.getInstance().config.getBoolean("log-player-interact-events")) TestPlugin.getInstance().getLogger().log(Level.INFO, "PlayerInteractEvent called.");
-        if(TestPlugin.getInstance().config.getBoolean("cancel-player-interact-events")) e.setCancelled(true);
+        if(TestPlugin.Config.logPlayerInteractEvents) TestPlugin.getInstance().getLogger().log(Level.INFO, "PlayerInteractEvent called.");
+        if(TestPlugin.Config.cancelPlayerInteractEvents) e.setCancelled(true);
     }
 }
